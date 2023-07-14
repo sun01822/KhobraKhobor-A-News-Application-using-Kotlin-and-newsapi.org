@@ -10,7 +10,6 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.sun.khobrakhobor.ApiInterface
 import com.sun.khobrakhobor.NewsResponse
 import com.sun.khobrakhobor.R
