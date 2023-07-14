@@ -1,6 +1,5 @@
 package com.sun.khobrakhobor.helper
 
-import android.app.ProgressDialog
 import android.content.Context
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
@@ -19,12 +18,7 @@ class Helper {
     private val apiKey = "1bb313f732b04e25ac5381fdb45ce12e"
     private val country = "us"
     private lateinit var call: Call<NewsResponse>
-    private lateinit var mProgressDialog : ProgressDialog
     fun fetchNews(category: String, context: Context, swipeRefreshLayout : SwipeRefreshLayout, recyclerView : RecyclerView) {
-        mProgressDialog = ProgressDialog(context)
-        mProgressDialog.setTitle("Fetching News...")
-        mProgressDialog.setMessage("Please wait for few seconds")
-        mProgressDialog.show()
         val retrofit = Retrofit.Builder()
             .baseUrl("https://newsapi.org/v2/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -52,13 +46,11 @@ class Helper {
                     // Handle unsuccessful response
                     Toast.makeText(context, "Data is not fetched successfully", Toast.LENGTH_SHORT).show()
                 }
-                mProgressDialog.cancel()
             }
 
             override fun onFailure(call: Call<NewsResponse>, t: Throwable) {
                 // Handle failure
                 swipeRefreshLayout.isRefreshing = false
-                mProgressDialog.cancel()
             }
         })
     }
