@@ -10,11 +10,11 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.sun.khobrakhobor.ApiInterface
 import com.sun.khobrakhobor.NewsResponse
 import com.sun.khobrakhobor.R
 import com.sun.khobrakhobor.adapter.NewsAdapter
+import com.sun.khobrakhobor.helper.Helper
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,7 +28,6 @@ class SearchFragment : Fragment() {
     private lateinit var btnSearch : Button
     private lateinit var etSearch : EditText
     private lateinit var mProgressDialog : ProgressDialog
-
     private val apiKey = "1bb313f732b04e25ac5381fdb45ce12e"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -36,7 +35,6 @@ class SearchFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerViewSearch)
         btnSearch = view.findViewById(R.id.btnSearch)
         etSearch = view.findViewById(R.id.etSearch)
-
         return view
     }
 
