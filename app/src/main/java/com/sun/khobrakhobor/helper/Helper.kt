@@ -15,7 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class Helper {
     private lateinit var newsAdapter: NewsAdapter
-    private val apiKey = "1bb313f732b04e25ac5381fdb45ce12e"
+    private val apiKey = ""  // enter your api key
     private val country = "us"
     private lateinit var call: Call<NewsResponse>
     fun fetchNews(category: String, context: Context, swipeRefreshLayout : SwipeRefreshLayout, recyclerView : RecyclerView) {
